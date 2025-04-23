@@ -12,7 +12,14 @@
     .card { box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
     .badge { font-size: 1em; }
     .display-5 { font-weight: bold; }
-    .assinatura { position: fixed; bottom: 5px; right: 15px; font-size: 0.85em; color: #6c757d; }
+    .assinatura {
+  font-size: 0.85em;
+  color: #6c757d;
+  text-align: center;
+  margin-top: 20px;
+  padding-bottom: 30px;
+}
+
   </style>
   <script>
     document.addEventListener('contextmenu', event => event.preventDefault());
@@ -26,25 +33,29 @@
 <body>
 
 <!-- TELA DE LOGIN -->
+<!-- TELA DE LOGIN -->
 <div class="login-container" id="login-box">
-  <div class="card p-4">
-    <h4 class="text-center mb-3">🔐 Acesso ao Dashboard</h4>
-    <div class="mb-3">
-      <label for="username" class="form-label">Usuário</label>
-      <input type="text" class="form-control" id="username">
+    <div class="card p-4">
+      <h4 class="text-center mb-3">🔐 Acesso ao Dashboard</h4>
+      <div class="mb-3">
+        <label for="username" class="form-label">Usuário</label>
+        <input type="text" class="form-control" id="username">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="password">
+      </div>
+      <div class="d-grid">
+        <button class="btn btn-primary" onclick="verificarLicenca()">Entrar</button>
+      </div>
+      <div id="login-error" class="text-danger mt-3 text-center d-none">Usuário ou senha incorretos.</div>
+      <div id="licenca-error" class="text-danger mt-3 text-center d-none">Licença inválida ou expirada.</div>
+      <div class="text-center mt-4" style="font-size: 0.85em; color: #6c757d;">
+        Desenvolvido e entregue por Ramon Zarbinati
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="password" class="form-label">Senha</label>
-      <input type="password" class="form-control" id="password">
-    </div>
-    <div class="d-grid">
-      <button class="btn btn-primary" onclick="verificarLicenca()">Entrar</button>
-    </div>
-    <div id="login-error" class="text-danger mt-3 text-center d-none">Usuário ou senha incorretos.</div>
-    <div id="licenca-error" class="text-danger mt-3 text-center d-none">Licença inválida ou expirada.</div>
   </div>
-</div>
-<span class="assinatura">Desenvolvido e entregue por Ramon Zarbinati</span>
+  
 
 <!-- DASHBOARD -->
 <div class="container py-4 dashboard" id="dashboard">
@@ -62,7 +73,7 @@
       <div class="card bg-success text-white">
         <div class="card-body">
           <h5 class="card-title">Atualizados</h5>
-          <p class="display-5">0</p>
+          <p class="display-5">15</p>
         </div>
       </div>
     </div>
@@ -70,7 +81,7 @@
       <div class="card bg-warning text-dark">
         <div class="card-body">
           <h5 class="card-title">Pendentes / Revisão</h5>
-          <p class="display-5">19</p>
+          <p class="display-5">4</p>
         </div>
       </div>
     </div>
@@ -95,7 +106,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Máquinas Monitoradas (Updates e Melhorias)</h5>
-          <p class="display-5">32</p>
+          <p class="display-5">37</p>
         </div>
       </div>
     </div>
@@ -103,7 +114,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Máquinas Monitoradas (BitDefender)</h5>
-          <p class="display-5">50</p>
+          <p class="display-5">37</p>
         </div>
       </div>
     </div>
@@ -122,34 +133,177 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td>Treinamentos de LGPD, Segurança Cibernética e da área de T.I do período</td><td>Treinamento</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Relação dos sistema utilizados, com usuários e perfis de acesso</td><td>Relatório</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Relatório com os usuários ativos e última troca de senha e último acesso</td><td>Relatório</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Relatório Anual sobre a implementação do plano de ação e de resposta a incidentes - Res. 4893/21 e Res.85/21</td><td>Relatório</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Políticas de Segurança Cibernética, acompanhada da ata de aprovação</td><td>Política</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Políticas de Privacidade e Cookies, acompanhada da ata de aprovação</td><td>Política</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Política de senhas</td><td>Política</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Plano de ação e de resposta a incidentes</td><td>Plano</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Plano de Continuidade de Negócios</td><td>Plano</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Inventário da T.I com Termos de Responsabilidade</td><td>Inventário</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Evidência dos Testes de Vulnerabilidade/Penetração do período</td><td>Evidência</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Descrição dos controles de segurança, como firewalls, sistemas de detecção de intrusões e criptografia</td><td>Descritivo</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Descritivo dos dados, registros e informações relativas aos mecanismos de acompanhamento e controle requeridos pelo art. 21 da Res. 4893/21 - Res.85/21</td><td>Descritivo</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Descritivo da estrutura interna e terceirizada para T.I e apresentar contratos com prestadores de serviços</td><td>Descritivo</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Descritivo com as rotinas de backup e evidência da última restauração realizada</td><td>Descritivo</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Cópia dos Antivírus e Firewall vigentes</td><td>Cópia</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Contratos da Área de T.I</td><td>Contrato</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Comprovante de comunicação ao BC da contratação de serviços relevantes de processamento, armazenamento de dados e de computação em nuvem</td><td>Comprovante</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-      <tr><td>Ata de designação do DPO</td><td>Ata</td><td>Ramon Zarbinati</td><td><span class="badge bg-warning text-dark">Pendente</span></td><td>22/04/2025</td><td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td></tr>
-    </tbody>
+        <tr>
+          <td>Treinamentos de LGPD, Segurança Cibernética e da área de T.I do período</td>
+          <td>Treinamento</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EmcChPL11L5Gn0ypnHj8B7EB69CgpYr1-bKBPS6j8oORuA?e=agoez3" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Relação dos sistema utilizados, com usuários e perfis de acesso</td>
+          <td>Relatório</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/ElaFdyQyijdIuz0Oi-fTTOMBzxwkdK6tL6yCFl1Q4aIqOw?e=aE8gCn" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Relatório com os usuários ativos e última troca de senha e último acesso</td>
+          <td>Relatório</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/Ernh_ba-VFROg_VkTGmU_ZsB6Y3ATS9HBjKWaflPHdenWg?e=ekojon" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Relatório Anual sobre a implementação do plano de ação e de resposta a incidentes - Res. 4893/21 e Res.85/21</td>
+          <td>Relatório</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EhXZWrIRfhFFhvadN8cQApQB-zD_3ckPYsEM8cEzZmq5-g?e=NPJlGN" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Políticas de Segurança Cibernética, acompanhada da ata de aprovação</td>
+          <td>Política</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EolJtW4EkRBAhF04xByEFWsB5C7iTd9NxuidT1_fYH3_Xg?e=axUQ5K" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Políticas de Privacidade e Cookies, acompanhada da ata de aprovação</td>
+          <td>Política</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EkwKXvXdJMJBvosfeI3s06sBVmKBgHAFlmyyPsXfy763LQ?e=2sjUwW" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Política de senhas</td>
+          <td>Política</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EqzxFjfljFJIutSf5ey3ejkBWH0MeP4-ORifE-deSJZybA?e=fvReoQ" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Plano de ação e de resposta a incidentes</td>
+          <td>Plano</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/El1ShXiLBY1Mt7bQREDN9wABYKNYlUeCTHlRbF3N7gkMOA?e=I54XkA" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Plano de Continuidade de Negócios</td>
+          <td>Plano</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EhAFz0eeddhDg2w0Qo8u0kABaf5d4f0DADzlQYUJtOQIgA?e=Sjg5TQ" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Inventário da T.I com Termos de Responsabilidade</td>
+          <td>Inventário</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-warning text-dark">Pendente</span></td>
+          <td>22/04/2025</td>
+          <td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Evidência dos Testes de Vulnerabilidade/Penetração do período</td>
+          <td>Evidência</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>21/02/2025</td>
+          <td>
+            <a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EjpHcg2uRxBJmowP6hkSFZABsbZ7EE6UWC6wUD7HHajv5w?e=AxfKi7" 
+               class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer">
+              Acesse este arquivo
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Descrição dos controles de segurança, como firewalls, sistemas de detecção de intrusões e criptografia</td>
+          <td>Descritivo</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/Eleh4Llj9ZlHhC7gcTRPqZgBkvHnu3zIryFa3jHbO98Rgw?e=TFoH16" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Descritivo dos dados, registros e informações relativas aos mecanismos de acompanhamento e controle requeridos pelo art. 21 da Res. 4893/21 - Res.85/21</td>
+          <td>Descritivo</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EoLm901cYqVGj_CoqpWwCW0BG4aF4AWjJO9Yyrxk9xwOJQ?e=5BxInc" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Descritivo da estrutura interna e terceirizada para T.I e apresentar contratos com prestadores de serviços</td>
+          <td>Descritivo</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EirNG95b-_5IkahKJoG4jrUBMLaHpa2-01frmnlp8xDtLg?e=sMZ3In" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Descritivo com as rotinas de backup e evidência da última restauração realizada</td>
+          <td>Descritivo</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-warning text-dark">Pendente</span></td>
+          <td>22/04/2025</td>
+          <td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Cópia dos Antivírus e Firewall vigentes</td>
+          <td>Cópia</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-warning text-dark">Pendente</span></td>
+          <td>22/04/2025</td>
+          <td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Contratos da Área de T.I</td>
+          <td>Contrato</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EidSjF6IhJ5Os1VY2KwIbAoBiYP_HdoH7rPXEm_Oy_WQpA?e=YYCgo1" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Comprovante de comunicação ao BC da contratação de serviços relevantes de processamento, armazenamento de dados e de computação em nuvem</td>
+          <td>Comprovante</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-success">Atualizado</span></td>
+          <td>22/04/2025</td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/Etc2764iFbJJqZI2Ytr0By8BFK7JiJNL0-9iFN5Bk3aSXg?e=h24sUq" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+        <tr>
+          <td>Ata de designação do DPO</td>
+          <td>Ata</td>
+          <td>Ramon Zarbinati</td>
+          <td><span class="badge bg-warning text-dark">Pendente</span></td>
+          <td>22/04/2025</td>
+          <td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+        </tr>
+      </tbody>
+      
   </table>
   
   
-  <footer class="text-center mt-4">
-    <small>Última atualização do dashboard: <strong>22/04/2025</strong></small>
-  </footer>
+<footer class="text-center mt-4">
+  <small>Última atualização do dashboard: <strong>22/04/2025</strong></small>
+</footer>
+
+<div class="assinatura">
+  Desenvolvido e entregue por Ramon Zarbinati
 </div>
-<span class="assinatura">Desenvolvido e entregue por Ramon Zarbinati</span>
+
+  
 
 <script>
   const users = {
