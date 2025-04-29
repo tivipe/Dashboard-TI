@@ -36,7 +36,7 @@
 <!-- TELA DE LOGIN -->
 <div class="login-container" id="login-box">
     <div class="card p-4">
-      <h4 class="text-center mb-3">🔐 Acesso ao Dashboard</h4>
+      <h4 class="text-center mb-3">🔐 Acesso ao Portal T.I</h4>
       <div class="mb-3">
         <label for="username" class="form-label">Usuário</label>
         <input type="text" class="form-control" id="username">
@@ -59,13 +59,14 @@
 
 <!-- DASHBOARD -->
 <div class="container py-4 dashboard" id="dashboard">
-  <h2 class="mb-4">📚 Dashboard de Gestão Documental e TI</h2>
+  <img src="https://media.discordapp.net/attachments/1045145781763571835/1366731821924094042/Logo_VIPe_Completo_-_Uso_fundo_claro.png?ex=681203b2&is=6810b232&hm=946f93c586ebf5254d5efd08fcb769cc6c664c56a7c58c555577b97d4e274461&=&format=webp&quality=lossless&width=1814&height=693" alt="Logo" style="height: 50px; display: block; margin: 0 auto;">
+  <h2 class="mb-4 text-center">Dashboard de Gestão Documental e TI</h2>
   <div class="row mb-4 text-center">
     <div class="col-md-3">
       <div class="card bg-primary text-white">
         <div class="card-body">
           <h5 class="card-title">Total de Documentos</h5>
-          <p class="display-5">19</p>
+          <p class="display-5">20</p>
         </div>
       </div>
     </div>
@@ -73,7 +74,7 @@
       <div class="card bg-success text-white">
         <div class="card-body">
           <h5 class="card-title">Atualizados</h5>
-          <p class="display-5">15</p>
+          <p class="display-5">20</p>
         </div>
       </div>
     </div>
@@ -81,7 +82,7 @@
       <div class="card bg-warning text-dark">
         <div class="card-body">
           <h5 class="card-title">Pendentes / Revisão</h5>
-          <p class="display-5">4</p>
+          <p class="display-5">0</p>
         </div>
       </div>
     </div>
@@ -120,6 +121,25 @@
     </div>
   </div>
 <!-- RESTANTE DO HTML MANTIDO COMO ESTÁ -->
+
+<div class="mb-4">
+  <label for="filtroCategoria" class="form-label"><strong>Filtrar por Categoria:</strong></label>
+  <select id="filtroCategoria" class="form-select" onchange="filtrarCategoria()">
+    <option value="todos">Todos</option>
+    <option value="Treinamento">Treinamento</option>
+    <option value="Relatório">Relatório</option>
+    <option value="Manual">Manual</option>
+    <option value="Plano">Plano</option>
+    <option value="Política">Política</option>
+    <option value="Descritivo">Descritivo</option>
+    <option value="Documentação">Documentação</option>
+    <option value="Contrato">Contrato</option>
+    <option value="Comprovante">Comprovante</option>
+    <option value="Ata">Ata</option>
+    <option value="Evidência">Evidência</option>
+  </select>
+</div>
+
 
 <table class="table table-striped table-bordered">
     <thead class="table-dark">
@@ -206,14 +226,6 @@
           <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EhAFz0eeddhDg2w0Qo8u0kABaf5d4f0DADzlQYUJtOQIgA?e=Sjg5TQ" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
         </tr>
         <tr>
-          <td>Inventário da T.I com Termos de Responsabilidade</td>
-          <td>Inventário</td>
-          <td>Ramon Zarbinati</td>
-          <td><span class="badge bg-warning text-dark">Pendente</span></td>
-          <td>22/04/2025</td>
-          <td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
-        </tr>
-        <tr>
           <td>Evidência dos Testes de Vulnerabilidade/Penetração do período</td>
           <td>Evidência</td>
           <td>Ramon Zarbinati</td>
@@ -251,20 +263,12 @@
           <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EirNG95b-_5IkahKJoG4jrUBMLaHpa2-01frmnlp8xDtLg?e=sMZ3In" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
         </tr>
         <tr>
-          <td>Descritivo com as rotinas de backup e evidência da última restauração realizada</td>
-          <td>Descritivo</td>
+          <td>Contrato Antivírus e Firewall vigentes</td>
+          <td>Contrato</td>
           <td>Ramon Zarbinati</td>
-          <td><span class="badge bg-warning text-dark">Pendente</span></td>
+          <td><span class="badge bg-success">Atualizado</span></td>
           <td>22/04/2025</td>
-          <td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
-        </tr>
-        <tr>
-          <td>Cópia dos Antivírus e Firewall vigentes</td>
-          <td>Cópia</td>
-          <td>Ramon Zarbinati</td>
-          <td><span class="badge bg-warning text-dark">Pendente</span></td>
-          <td>22/04/2025</td>
-          <td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EstCdWwxCoJEuMkTNqEJ-vMBVa2dyCFWaNwonNT1F1uI3w?e=SdghvC" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
         </tr>
         <tr>
           <td>Contratos da Área de T.I</td>
@@ -282,14 +286,36 @@
           <td>22/04/2025</td>
           <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/Etc2764iFbJJqZI2Ytr0By8BFK7JiJNL0-9iFN5Bk3aSXg?e=h24sUq" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
         </tr>
-        <tr>
-          <td>Ata de designação do DPO</td>
-          <td>Ata</td>
+        <td>Documentação de Rotinas de Backup</td>
+        <td>Documentação</td>
+        <td>Ramon Zarbinati</td>
+        <td><span class="badge bg-success">Atualizado</span></td>
+        <td>22/04/2025</td>
+        <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EmyesYLz3XBEtTb4qKng_YsBI1CjUdwfPzMEs7Jm70bGHA?e=BhfUkt" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+      </tr>
+    </tr>
+          <td>Manual de Acesso ao Servidor FTP Usando o FileZilla</td>
+          <td>Manual</td>
           <td>Ramon Zarbinati</td>
-          <td><span class="badge bg-warning text-dark">Pendente</span></td>
+          <td><span class="badge bg-success">Atualizado</span></td>
           <td>22/04/2025</td>
-          <td><a href="#" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
-        </tr>
+          <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EuDrI6MtAqlIl6MEDZnJ4iAB9FGMVaseWtk9oWt1BYUlxw?e=3X5ega" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+     </tr>
+     </tr>
+        <td>Manual de Troca de Assinatura no Outlook</td>
+        <td>Manual</td>
+        <td>Ramon Zarbinati</td>
+        <td><span class="badge bg-success">Atualizado</span></td>
+        <td>22/04/2025</td>
+        <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EvexaaWhvzhLtsFYZniY9IgBN07G5D2gA2dMaoL5VYVsCw?e=ggaGbU" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+    </tr>
+      <td>Manual de Configuração de E-mail Corporativo</td>
+      <td>Manual</td>
+      <td>Ramon Zarbinati</td>
+      <td><span class="badge bg-success">Atualizado</span></td>
+      <td>22/04/2025</td>
+      <td><a href="https://ffa2.sharepoint.com/:f:/s/PortalTI/EgQbn-1bk7pKvotNWsdZFQABL8M3iHsiSpBPI4g0gS958A?e=TOF7Pg" class="btn btn-sm btn-primary">Acesse este arquivo</a></td>
+    </tr>
       </tbody>
       
   </table>
@@ -308,8 +334,9 @@
 <script>
   const users = {
     ramon: '1234',
-    camila: 'vipeti',
-    larissa: 'seguro2025'
+    camila_rocha: 'vipeti',
+    daniel_goivinho: 'vipeti',
+    larissa_martins: 'seguro2025'
   };
 
   function verificarLicenca() {
@@ -352,5 +379,22 @@
     });
   </script>
   
+  <script>
+    function filtrarCategoria() {
+      const categoriaSelecionada = document.getElementById('filtroCategoria').value;
+      const linhas = document.querySelectorAll('table tbody tr');
+    
+      linhas.forEach(linha => {
+        const categoria = linha.querySelectorAll('td')[1].textContent.trim();
+        if (categoriaSelecionada === "todos" || categoria === categoriaSelecionada) {
+          linha.style.display = "";
+        } else {
+          linha.style.display = "none";
+        }
+      });
+    }
+    </script>
+    
+
 </body>
 </html>
